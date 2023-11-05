@@ -17,7 +17,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { LoginComponent } from './login/login.component'
+
 
 
 
@@ -26,7 +26,7 @@ import { LoginComponent } from './login/login.component'
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
+  
 
 
   ],

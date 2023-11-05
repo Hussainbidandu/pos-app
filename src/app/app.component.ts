@@ -33,7 +33,9 @@ navigateBranchManager(){
 navigateBranchEmployee(){
   this.router.navigate(['branch-employee/user-profile'])
 }
-
+login(){
+  this.router.navigate(['login'])
+}
 
 
 

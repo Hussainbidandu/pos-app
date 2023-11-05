@@ -1,19 +1,34 @@
+
 {
-  "posts": [
+  "products": [
+
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "name": "Product 1",
+      "price": 10.99,
+      "category": "Electronics"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "name": "Product 2",
+      "price": 19.99,
+      "category": "Clothing"
+    },
+    {
+      "id": 3,
+      "name": "Product 3",
+      "price": 5.49,
+      "category": "Books"
     }
   ],
-  "profile": {
-    "name": "typicode"
+  
+    "empolyee":[
+     
+    ]
   }
-}
+ 
+
+
+  
+
+

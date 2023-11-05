@@ -1,1 +1,44 @@
-<p>product works!</p>
+
+
+
+
+<div class="container">
+    <h3> Products List</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th> Id </th>&nbsp;&nbsp;&nbsp;&nbsp;
+                <th> Name </th>&nbsp;&nbsp;&nbsp;&nbsp;
+                <th> Price </th>&nbsp;&nbsp;&nbsp;&nbsp;
+                <th> Category </th>&nbsp;&nbsp;&nbsp;&nbsp;
+
+                <th> Actions </th>&nbsp;&nbsp;&nbsp;&nbsp;
+            </tr>
+        </thead> 
+          <tbody>
+            <tr *ngFor="let product of products">
+                <td> {{ product.id }} </td>
+                <td> {{ product.name }} </td>
+                <td> {{ product.price }} </td>
+                
+                <td> {{ product.category }} </td>
+                 <td>
+                    <button mat-button color="primary" (click)="editProduct(product.id)">Edit</button> 
+                     <button mat-button color="warn" (click)="deleteProduct(product.id)">Delete</button> 
+                </td> 
+            </tr>
+        </tbody>  
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+ 

@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router'
 
 //components
 import { ProductComponent } from './product/product.component';
+import {products} from '../models/product'
 
 const myRouting:Routes=[
   {path:'product',component:ProductComponent}
@@ -13,7 +14,7 @@ const myRouting:Routes=[
 
 @NgModule({
   declarations: [
-    ProductComponent
+    ProductComponent,
   ],
   imports: [
     CommonModule,

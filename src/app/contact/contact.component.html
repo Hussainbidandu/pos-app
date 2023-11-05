@@ -1,1 +1,50 @@
-<p>contact works!</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Your Event Management</title>
+   
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+
+    <nav>
+        <!-- Include navigation links if necessary -->
+    </nav>
+
+    <main>
+        <section>
+            <h2>Contact Information</h2>
+            <p>Feel free to get in touch with us through the following contact methods:</p>
+
+            <address>
+                <p><strong>Address:</strong>  kphb, hightechcity</p>
+                <p><strong>Email:</strong> <a href="mailto:info@yourpos.com">info@yourpos.com</a></p>
+                <p><strong>Phone:</strong> <a href="tel:95241-12345">+95241-12345</a></p>
+            </address>
+        </section>
+
+        <section>
+            <h2>Contact Form</h2>
+            <p>If you prefer, you can also send us a message using the contact form below:</p>
+
+            <form action="process_contact.php" method="post">
+                <label for="name"><h5 style="color:blue">Name:</h5></label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email"><h5 style="color:blue">Email:</h5></label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message"><h5 style="color:blue">Message:</h5></label>
+                <textarea id="message" name="message" rows="4" required></textarea>&nbsp;&nbsp;
+
+                <button mat-stroked-button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Include footer content and links if necessary -->
+    </footer>
+</body>
