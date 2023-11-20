@@ -44,24 +44,24 @@
     "name": "A",
     "role": "admin",
     "phonenumber": "9576342199",
-    "userId": "Hussain123",
-    "password": "Hussain123"
+    "userId": "Admin123",
+    "password": "Admin123"
   },
   {
     "id": 2,
     "name": "B",
     "role": "branchmanager",
     "phonenumber": "6754321890",
-    "userId": "Sonu415",
-    "password": "Sonu415"
+    "userId": "Manager124",
+    "password": "Manager124"
   },
   {
     "id": 3,
     "name": "C",
     "role": "branchemployee",
     "phonenumber": "8423543216",
-    "userId": "Ramya123",
-    "password": "Ramya123"
+    "userId": "Employee125",
+    "password": "Employee125"
   }
   ],
   "addEmployees": [
