@@ -1,6 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import {  ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+
+
+
 
 import { RouterModule, Routes } from '@angular/router';
  const myRouting :Routes= [
@@ -16,6 +22,9 @@ import { RouterModule, Routes } from '@angular/router';
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatFormFieldModule,
     RouterModule.forChild(myRouting)
   ]
 })

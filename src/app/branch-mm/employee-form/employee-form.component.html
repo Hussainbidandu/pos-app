@@ -1,0 +1,106 @@
+<p>employee-form works!</p>
+
+<div class="container-fluid">
+    <h2> employee form</h2>
+    <hr />
+
+    {{addEmployee | json}}
+    <form #form="ngForm">
+        <!-- id -->
+        <div class="row">
+            <div calss="col-md-2">
+                <mat-form-field>
+                    <mat-label>ID</mat-label>
+                    <input matInput type="text" name="id" #id="ngModel" [(ngModel)]="addEmployee.id" required>
+                </mat-form-field>
+                <span *ngIf="id.errors && (id.touched || id.dirty)" style="color: red;">
+                    <span [hidden]="!id.errors['required']"> Enter Id </span>
+                </span>
+            </div>
+        </div>
+        <!-- Name Columns  -->
+        <div class="row">
+            <!-- first Name column -->
+            <div class="col-md-2">
+                <mat-form-field>
+                    <mat-label> First Name </mat-label>
+                    <input matInput type="text" name="firstName" #firstName="ngModel"
+                        [(ngModel)]="addEmployee.firstName" required>
+                </mat-form-field>
+                <span *ngIf="firstName.errors && (firstName.touched || firstName.dirty)" style="color: red;">
+                    <span [hidden]="!firstName.errors['required']"> Enter First Name </span>
+                </span>
+            </div>
+            <!-- last Name column  -->
+            <div class="col-md-2">
+                <mat-form-field>
+                    <mat-label> Last Name </mat-label>
+                    <input matInput type="text" name="lastName" #lastName="ngModel" [(ngModel)]="addEmployee.lastName"
+                        required>
+                </mat-form-field>
+                <span *ngIf="lastName.errors && (lastName.touched || lastName.dirty)" style="color: red;">
+                    <span [hidden]="!lastName.errors['required']"> Enter Last Name </span>
+                </span>
+            </div>
+        </div>
+        <!-- Phone Number row  -->
+        <div class="row">
+        <div class="col-md-4">
+            <mat-form-field>
+                <mat-label> Phone Number </mat-label>
+                <input matInput type="text" name="phoneNumber" #phoneNumber="ngModel"
+                    [(ngModel)]="addEmployee.phoneNumber" pattern="^[6-9]{1}[0-9]{9}$" required>
+            </mat-form-field>
+            <span *ngIf="phoneNumber.errors && (phoneNumber.touched || phoneNumber.dirty)" style="color: red;">
+                <span [hidden]="!phoneNumber.errors['required']"> Enter Phone Number</span>
+                <span [hidden]="!phoneNumber.errors['pattern']"> Enter Valid Phone Number</span>
+            </span>
+        </div>
+
+        <!--  user role -->
+        <div class="row">
+            <div class="col-md-4">
+                <mat-form-field>
+                    <mat-label> Designation</mat-label>
+                    <input matInput type="text" name="userRole" #userRole="ngModel" [(ngModel)]="addEmployee.userRole"
+                        required>
+                </mat-form-field>
+                <span *ngIf="userRole.errors && (userRole.touched || userRole.dirty)" style="color: red;">
+                    <span [hidden]="!userRole.errors['required']"> Enter Designation</span>
+                </span>
+            </div>
+        </div>
+
+        <!-- email Column -->
+        <div class="row">
+            <!-- Name column -->
+            <div class="col-md-2">
+                <mat-form-field>
+                    <mat-label>email</mat-label>
+                    <input matInput type="text" name="email" #email="ngModel" [(ngModel)]="addEmployee.email">
+                </mat-form-field>
+                <span *ngIf="email.errors && (email.touched || email.dirty)" style="color: red;">
+                    <span [hidden]="!email.errors['required']"> Enter City</span>
+                </span>
+            </div>
+        </div>
+        <!-- password Column -->
+        <div class="row">
+            <!-- Name column -->
+            <div class="col-md-2">
+                <mat-form-field>
+                    <mat-label>password</mat-label>
+                    <input matInput type="text" name="password" #password="ngModel" [(ngModel)]="addEmployee.password">
+                </mat-form-field>
+                <span *ngIf="password.errors && (password.touched || password.dirty)" style="color: red;">
+                    <span [hidden]="!password.errors['required']"> Enter City</span>
+                </span>
+            </div>
+        </div>
+          <!-- Submit  -->
+          <div class="row">
+            <div class="col-md-2">
+                <button mat-raised-button color="accent" (click)="onSubmit(form)" [disabled]="form.invalid"> Submit </button>
+            
+            </div>
+        </div>

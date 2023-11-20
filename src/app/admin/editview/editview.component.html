@@ -1,0 +1,68 @@
+<p>editview works!</p>
+<div class="container-fluid">
+    <h2>Edit view users</h2>
+    <hr/>
+    {{ user | json }}
+
+    <form #form="ngForm">
+        <!-- id -->
+        <div class="row">
+            <div calss="col-md-2">
+                <mat-form-field>
+                    <mat-label>ID</mat-label>
+                    <input matInput type="text" name="id" #id="ngModel" [(ngModel)]="user.id">
+                </mat-form-field>
+            </div>
+        </div>
+          <!-- Name Column -->
+          <div class="row">
+            <!-- Name column -->
+            <div class="col-md-2">
+                <mat-form-field>
+                    <mat-label>FirstName</mat-label>
+                    <input matInput type="text" name="firstName" #firstname="ngModel"
+                        [(ngModel)]="user.firstname">
+                </mat-form-field>
+            </div>
+        </div>
+           <!--last-Name Column -->
+           <div class="row">
+            <!-- Name column -->
+            <div class="col-md-2">
+                <mat-form-field>
+                    <mat-label>lastName</mat-label>
+                    <input matInput type="text" name="lastName" #lasttName="ngModel" [(ngModel)]="user.lastname">
+                </mat-form-field>
+            </div>
+        </div>
+           <!-- phone num Column -->
+           <div class="row">
+            <!-- Name column -->
+            <div class="col-md-2">
+                <mat-form-field>
+                    <mat-label>phoneNumber</mat-label>
+                    <input matInput type="text" name="phoneNumber" #phoneNumber="ngModel" [(ngModel)]="user.phoneNumber">
+                </mat-form-field>
+            </div>
+        </div>
+        
+         <!-- user role Column -->
+         <div class="row">
+            <!-- Name column -->
+            <div class="col-md-2">
+                <mat-form-field>
+                    <mat-label>role</mat-label>
+                    <input matInput type="text" name="role" #role="ngModel" [(ngModel)]="user.role">
+                </mat-form-field>
+            </div>
+        </div>
+
+          <!-- Submit Button -->
+          <div class="row">
+            <div class="col-md-2">
+                <button mat-raised-button color="accent" (click)="updateuser(form)" >Submit</button>
+            </div>
+        </div>
+        </form>
+        </div>
+        

@@ -1,0 +1,67 @@
+<div class="col-md-4">
+  <h1> view users by roles </h1>
+  <table>
+    <thead>
+      <tr class="content-style">
+        <td>id</td>&nbsp;&nbsp;
+        <td> name </td>&nbsp;&nbsp;
+        <td> PhoneNumner</td>&nbsp;&nbsp;
+        <td> role </td>&nbsp;&nbsp;
+        <td> Actions </td>&nbsp;&nbsp;
+      </tr>
+    </thead>
+    <tbody>
+
+      <ng-container *ngFor="let user of users">
+        <tr [ngClass]="{
+                        'class-style': user.role === 'branchemployee',
+                        'content-style': user.role === 'branchmanager'
+                    }">
+          <td> {{user.id}} </td>&nbsp;&nbsp;&nbsp;
+
+          <td> {{user.firstname}}{{user.lastname}} </td>&nbsp;&nbsp;&nbsp;
+          <td> {{user.phoneNumber}} </td>&nbsp;&nbsp;&nbsp;
+          <td> {{user.role}} </td>&nbsp;&nbsp;&nbsp;
+          <td>
+            <button  mat-button color="accent" (click)="editView(user.id)">Edit</button> 
+            <button mat-button color="primary" (click)="  deleteView(user.id)">delete</button>&nbsp;&nbsp;
+
+
+            <!-- <button mat-button color="primary" (click)="  deleteView(user.role)">delete</button>&nbsp;&nbsp; -->
+          </td>
+        </tr>
+      </ng-container>
+
+
+    </tbody>
+  </table>
+</div>
+
+<br>
+<hr />
+<!-- ng if directive -->
+<div class="col-md-4">
+  <h1>View Users by Roles (branchemployee)</h1>
+  <table>
+    <thead>
+      <tr class="content-style">
+        <td>Name</td>&nbsp;&nbsp;&nbsp;
+        <td>PhoneNumber</td>&nbsp;&nbsp;&nbsp;
+        <td>Role</td>&nbsp;&nbsp;&nbsp;
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let user of users">
+        <!-- Display row only if the user's role is 'branchemployee' -->
+        <ng-container *ngIf="user.role === 'branchemployee'">
+          <tr class="class-style">
+            <td> {{user.firstname}} {{user.lastname}} </td>&nbsp;&nbsp;&nbsp;
+            <td> {{user.phoneNumber}} </td>&nbsp;&nbsp;&nbsp;
+            <td> {{user.role}} </td>&nbsp;&nbsp;&nbsp;
+          </tr>
+        </ng-container>
+      </ng-container>
+    </tbody>
+  </table>
+</div>
+<br>

@@ -1,0 +1,57 @@
+<p>contact-form works!</p>
+<div class="container-fluid">
+    <h2>contact form</h2>
+    <hr />
+    {{ contact | json }}
+    <form #form="ngForm">
+
+        <!-- Name Columns  -->
+        <div class="row">
+            <!-- first Name column -->
+            <div class="col-md-2">
+                <mat-form-field>
+                    <mat-label>  Name </mat-label>
+                    <input matInput type="text" name="name" #name="ngModel" [(ngModel)]="contact.name" required>
+                </mat-form-field>
+                <span *ngIf="name.errors && (name.touched || name.dirty)" style="color: red;">
+                    <span [hidden]="!name.errors['required']"> Enter Name </span>
+                </span>
+            </div>
+            <!-- Phone Number row  -->
+            <div class="row">
+                <div class="col-md-4">
+                    <mat-form-field>
+                        <mat-label> Phone Number </mat-label>
+                        <input matInput type="text" name="phoneNumber" #phoneNumber="ngModel"
+                            [(ngModel)]="contact.phoneNumber" pattern="^[6-9]{1}[0-9]{9}$" required>
+                    </mat-form-field>
+                    <span *ngIf="phoneNumber.errors && (phoneNumber.touched || phoneNumber.dirty)" style="color: red;">
+                        <span [hidden]="!phoneNumber.errors['required']"> Enter Phone Number</span>
+                        <span [hidden]="!phoneNumber.errors['pattern']"> Enter Valid Phone Number</span>
+                    </span>
+                </div>
+
+                <!-- email Column -->
+                <div class="row">
+                    <!-- Name column -->
+                    <div class="col-md-2">
+                        <mat-form-field>
+                            <mat-label>email</mat-label>
+                            <input matInput type="text" name="email" #email="ngModel" [(ngModel)]="contact.email">
+                        </mat-form-field>
+                        <span *ngIf="email.errors && (email.touched || email.dirty)" style="color: red;">
+                            <span [hidden]="!email.errors['required']"> Enter City</span>
+                        </span>
+                    </div>
+                </div>
+                <!-- Submit  -->
+                <div class="row">
+                    <div class="col-md-2">
+                        <button mat-raised-button color="accent" (click)="onSubmit(form)" [disabled]="form.invalid">
+                            Submit </button>
+
+                    </div>
+                </div>
+            </div>
+</div></form>
+</div>

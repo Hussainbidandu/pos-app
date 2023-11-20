@@ -1,44 +1,30 @@
-
-
-
+<h2>product-List</h2>
 
 <div class="container">
-    <h3> Products List</h3>
-    <table class="table">
-        <thead>
-            <tr>
-                <th> Id </th>&nbsp;&nbsp;&nbsp;&nbsp;
-                <th> Name </th>&nbsp;&nbsp;&nbsp;&nbsp;
-                <th> Price </th>&nbsp;&nbsp;&nbsp;&nbsp;
-                <th> Category </th>&nbsp;&nbsp;&nbsp;&nbsp;
+  <h3> Product-Table List</h3>
 
-                <th> Actions </th>&nbsp;&nbsp;&nbsp;&nbsp;
-            </tr>
-        </thead> 
-          <tbody>
-            <tr *ngFor="let product of products">
-                <td> {{ product.id }} </td>
-                <td> {{ product.name }} </td>
-                <td> {{ product.price }} </td>
-                
-                <td> {{ product.category }} </td>
-                 <td>
-                    <button mat-button color="primary" (click)="editProduct(product.id)">Edit</button> 
-                     <button mat-button color="warn" (click)="deleteProduct(product.id)">Delete</button> 
-                </td> 
-            </tr>
-        </tbody>  
-    </table>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>&nbsp;&nbsp;&nbsp;&nbsp;
+        <th>Name</th>&nbsp;&nbsp;&nbsp;&nbsp;
+        <th>Price</th>&nbsp;&nbsp;&nbsp;&nbsp;
+        <th>Category</th>&nbsp;&nbsp;&nbsp;&nbsp;
+        <th>Actions</th>&nbsp;&nbsp;&nbsp;&nbsp;
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.id }}</td>&nbsp;&nbsp;&nbsp;&nbsp;
+        <td>{{ product.name }}</td>&nbsp;&nbsp;&nbsp;&nbsp;
+        <td>{{ product.price | currency }}</td>&nbsp;&nbsp;&nbsp;&nbsp;
+        <td>{{product.category}}</td>&nbsp;&nbsp;&nbsp;&nbsp;
+        <td>
+          <button mat-button color="primary" (click)=" editProduct(product.id)">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+          <button mat-button color="warn" (click)=" deleteProduct(product.id)">Delete</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
 </div>
-
-
-
-
-
-
-
-
-
-
-
- 

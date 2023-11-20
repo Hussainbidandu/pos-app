@@ -1,0 +1,89 @@
+
+<div class="container-fluid">
+    <h2>Edit employee</h2>
+    <hr />
+
+    {{addEmployee | json}}
+    <form #form="ngForm">
+        <!-- id -->
+        <div class="row">
+            <div calss="col-md-2">
+                <mat-form-field>
+                    <mat-label>ID</mat-label>
+                    <input matInput type="text" name="id" #id="ngModel" [(ngModel)]="addEmployee.id">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <!-- Name Column -->
+        <div class="row">
+            <!-- Name column -->
+            <div class="col-md-2">
+                <mat-form-field>
+                    <mat-label>FirstName</mat-label>
+                    <input matInput type="text" name="firstName" #firstName="ngModel"
+                        [(ngModel)]="addEmployee.firstName">
+                </mat-form-field>
+            </div>
+        </div>
+         <!--last-Name Column -->
+         <div class="row">
+            <!-- Name column -->
+            <div class="col-md-2">
+                <mat-form-field>
+                    <mat-label>lastName</mat-label>
+                    <input matInput type="text" name="lastName" #lasttName="ngModel" [(ngModel)]="addEmployee.lastName">
+                </mat-form-field>
+            </div>
+        </div>
+
+         <!-- phone num Column -->
+         <div class="row">
+            <!-- Name column -->
+            <div class="col-md-2">
+                <mat-form-field>
+                    <mat-label>phoneNumber</mat-label>
+                    <input matInput type="text" name="phoneNumber" #phoneNumber="ngModel" [(ngModel)]="addEmployee.phoneNumber">
+                </mat-form-field>
+            </div>
+        </div>
+
+         <!-- user role Column -->
+         <div class="row">
+            <!-- Name column -->
+            <div class="col-md-2">
+                <mat-form-field>
+                    <mat-label>user role</mat-label>
+                    <input matInput type="text" name="userRole" #userRole="ngModel" [(ngModel)]="addEmployee.userRole">
+                </mat-form-field>
+            </div>
+        </div>
+         <!-- email Column -->
+         <div class="row">
+            <!-- Name column -->
+            <div class="col-md-2">
+                <mat-form-field>
+                    <mat-label>email</mat-label>
+                    <input matInput type="text" name="email" #email="ngModel"  [(ngModel)]="addEmployee.email">
+                </mat-form-field>
+            </div>
+        </div>
+         <!-- password Column -->
+         <div class="row">
+            <!-- Name column -->
+            <div class="col-md-2">
+                <mat-form-field>
+                    <mat-label>password</mat-label>
+                    <input matInput type="text" name="password" #password="ngModel" [(ngModel)]="addEmployee.password">
+                </mat-form-field>
+            </div>
+        </div>
+         <!-- Submit Button -->
+         <div class="row">
+            <div class="col-md-2">
+                <button mat-raised-button color="accent" (click)="updateEmployee(form)" >Submit</button>
+            </div>
+        </div>
+    </form>
+
+</div>

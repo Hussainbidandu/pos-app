@@ -1,0 +1,30 @@
+
+
+<div class="container">
+  <h3> user-Table List</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>&nbsp;&nbsp;&nbsp;&nbsp;
+        <th>Name</th>&nbsp;&nbsp;&nbsp;&nbsp;
+        <th>PhoneNumner</th>&nbsp;&nbsp;&nbsp;&nbsp;
+        <th>role</th>&nbsp;&nbsp;&nbsp;&nbsp;
+      
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>&nbsp;&nbsp;&nbsp;&nbsp;
+        <td>{{ user.firstname }} {{ user.lastname }}</td>&nbsp;&nbsp;&nbsp;&nbsp;
+        <td>{{ user.PhoneNumner}}</td>&nbsp;&nbsp;&nbsp;&nbsp;
+        <td>{{user.role}}</td>&nbsp;&nbsp;&nbsp;&nbsp;
+        </tr>
+      </tbody>
+</table>
+
+</div>
+
+
+
+
+ 

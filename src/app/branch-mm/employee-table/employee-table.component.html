@@ -1,0 +1,41 @@
+<div class="container">
+<h1>Branch_Employee_list</h1>
+<table>
+    <thead>
+      <tr>
+        <th>id</th>&nbsp;&nbsp;&nbsp;&nbsp;
+        <th>firstname</th>&nbsp;&nbsp;&nbsp;&nbsp;
+        <th>lastname</th>&nbsp;&nbsp;&nbsp;&nbsp;
+        <th>phonenumber</th>&nbsp;&nbsp;&nbsp;&nbsp;
+        <th>userRole</th>&nbsp;&nbsp;&nbsp;&nbsp;
+        <th>email</th>&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <th>password</th>&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+        <th>Actions</th>&nbsp;&nbsp;&nbsp;&nbsp;
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let addEmployee of addEmployees">
+        <td>{{ addEmployee.id }}</td>&nbsp;&nbsp;&nbsp;&nbsp;
+        <td>{{ addEmployee.firstName }}</td>&nbsp;&nbsp;&nbsp;&nbsp;
+        <td>{{ addEmployee.lastName}}</td>&nbsp;&nbsp;&nbsp;&nbsp;
+        <td>{{addEmployee.phoneNumber}}</td>&nbsp;&nbsp;&nbsp;&nbsp;
+        <td>{{addEmployee.userRole}}</td>&nbsp;&nbsp;&nbsp;&nbsp;
+        <td>{{addEmployee.email}}</td>&nbsp;&nbsp;&nbsp;&nbsp;
+        <td>{{addEmployee.password}}</td>&nbsp;&nbsp;&nbsp;&nbsp;
+        <td>
+          <button mat-button color="primary" (click)=" editaddEmployee(addEmployee.id)">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+          <button mat-button color="warn" (click)="  deleteaddEmployee(addEmployee.id)">Delete</button>&nbsp;&nbsp;&nbsp;&nbsp; 
+        </td>
+
+
+
+      </tr>
+    </tbody>
+</table>
+</div>
+<!-- 
+<button mat-button color="primary" (click)=" editProduct(addEmployee.id)">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+<button mat-button color="warn" (click)=" deleteProduct(addEmployee.id)">Delete</button>&nbsp;&nbsp;&nbsp;&nbsp; -->

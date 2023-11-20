@@ -1,0 +1,63 @@
+<p>productform works!</p>
+<div class="container-fluid">
+    <h2>product form</h2>
+    <hr />
+    {{ product | json }}
+    <form #form="ngForm">
+        <!-- ID Column  -->
+        <div class="row">
+            <div class="col-md-4">
+                <mat-form-field>
+                    <mat-label> ID </mat-label>
+                    <input matInput type="number" name="id" #id="ngModel" [(ngModel)]="product.id" required>
+                </mat-form-field>
+                <span *ngIf="id.errors && (id.touched || id.dirty)" style="color: red;">
+                    <span [hidden]="!id.errors['required']"> Enter Id </span>
+                </span>
+            </div>
+        </div>
+         <!-- Name Columns  -->
+         <div class="row">
+            <!-- first Name column -->
+            <div class="col-md-2">
+                <mat-form-field>
+                    <mat-label> product Name </mat-label>
+                    <input matInput  type="text" name="name" #name="ngModel" [(ngModel)]="product.name" required>
+                </mat-form-field>
+                <span *ngIf="name.errors && (name.touched || name.dirty)" style="color: red;">
+                    <span [hidden]="!name.errors['required']"> Enter product Name </span>
+                </span>
+            </div>
+
+            <div class="row">
+                <!-- price column -->
+                <div class="col-md-4">
+                    <mat-form-field>
+                        <mat-label>Price</mat-label>
+                        <input matInput type="number" name="price" #name="ngModel" [(ngModel)]="product.price" required>
+                    </mat-form-field>
+                    <span *ngIf="name.errors && (name.touched || name.dirty)" style="color: red;">
+                        <span [hidden]="!name.errors['required']"> Enter price</span>
+                    </span>
+                </div>
+            </div>
+             <!-- Category Column -->
+        <div class="row">
+            <div class="col-md-4">
+                <mat-form-field>
+                    <mat-label>Category</mat-label>
+                    <input matInput type="text" name="category" #category="ngModel" [(ngModel)]="product.category" required>
+                </mat-form-field>
+                <span *ngIf="name.errors && (name.touched || name.dirty)" style="color: red;">
+                    <span [hidden]="!name.errors['required']"> Enter price</span>
+                </span>
+            </div>
+        </div>
+        <!-- submit -->
+        <div class="row">
+            <div class="col-md-2">
+                <button mat-raised-button color="accent" (click)="onSubmit(form)" [disabled]="form.invalid"> Submit </button>
+        
+            </div>
+        </div>
+</div>

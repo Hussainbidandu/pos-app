@@ -1,0 +1,18 @@
+<h1>contact us list</h1>
+
+<div class="container">
+    <table>
+        <thead>
+            <th>name</th>&nbsp;&nbsp;
+            <th>PhoneNumner</th>&nbsp;&nbsp;
+            <th>email</th>&nbsp;&nbsp;
+        </thead>
+        <tbody>
+            <tr *ngFor="let contact of contacts">
+                <td>{{contact.name}}</td>&nbsp;&nbsp;
+                <td>{{contact.phoneNumber}}</td>&nbsp;&nbsp;
+                <td>{{contact.email}}</td>&nbsp;&nbsp;
+            </tr>
+        </tbody>
+    </table>
+</div>

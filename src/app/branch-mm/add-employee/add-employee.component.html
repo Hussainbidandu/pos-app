@@ -1,1 +1,71 @@
-<p>add-employee works!</p>
+<div class="container">
+    <h2>Add Employee</h2>
+    <hr />
+     <form [formGroup]="employeeForm" (ngSubmit)="addEmployee()">
+        <div class="row">
+            <!-- ID column -->
+            <div class="col-md-4">
+                <mat-form-field>
+                    <mat-label>ID</mat-label>
+                    <input matInput type="number" autocomplete="off" formControlName="id">
+                </mat-form-field>
+                <mat-error *ngIf="employeeForm.controls['id'].hasError('required') && formSubmitted || (employeeForm.get('id').invalid && employeeForm.get('id').touched)">
+                    Enter ID
+                </mat-error>
+            </div>
+            <!-- Name column -->
+            <div class="col-md-4">
+                <mat-form-field>
+                    <mat-label>NAME</mat-label>
+                    <input matInput type="text" autocomplete="off" formControlName="name">
+                </mat-form-field>
+                <mat-error *ngIf="employeeForm.controls['name'].hasError('required') && formSubmitted || (employeeForm.get('name').invalid && employeeForm.get('name').touched)">
+                    Enter Name
+                </mat-error>
+            </div>
+        </div>
+        <div class="row">
+            <!-- positon column -->
+            <div class="col-md-4">
+                <mat-form-field>
+                    <mat-label>role</mat-label>
+                    <input matInput type="text" autocomplete="off" formControlName="role">
+                </mat-form-field>
+                <mat-error *ngIf="employeeForm.controls['role'].hasError('required') && formSubmitted || (employeeForm.get('role').invalid && employeeForm.get('role').touched)">
+                    Enter Position
+                </mat-error>
+            </div>
+            <!-- phonenumber column -->
+            <div class="col-md-4">
+                <mat-form-field>
+                    <mat-label>PhoneNumber</mat-label>
+                    <input matInput type="text" autocomplete="off" formControlName="phonenumber">
+                </mat-form-field>
+                <mat-error *ngIf="employeeForm.controls['phonenumber'].hasError('required') && formSubmitted || (employeeForm.get('phonenumber').invalid && employeeForm.get('phonenumber').touched)">
+                    Enter PhoneNumber
+                </mat-error>
+            </div>
+            <!-- user id -->
+            <div class="col-md-4">
+                <mat-form-field>
+                    <mat-label>user-id</mat-label>
+                    <input matInput type="text" autocomplete="off" formControlName="userId">
+                </mat-form-field>
+                <mat-error *ngIf="employeeForm.controls['userId'].hasError('required') && formSubmitted || (employeeForm.get('userId').invalid && employeeForm.get('userId').touched)">
+                    Enter user id
+                </mat-error>
+            </div>
+            <!-- password -->
+            <div class="col-md-4">
+                <mat-form-field>
+                    <mat-label>password</mat-label>
+                    <input matInput type="text" autocomplete="off" formControlName="password">
+                </mat-form-field>
+                <mat-error *ngIf="employeeForm.controls['password'].hasError('required') && formSubmitted || (employeeForm.get('password').invalid && employeeForm.get('password').touched)">
+                    Enter user id
+                </mat-error>
+            </div>
+        </div>
+        <button mat-raised-button color="primary" type="submit" [disabled]="employeeForm.invalid">Submit</button>
+    </form>
+</div>

@@ -1,8 +1,8 @@
 export class products {
-    id: any;
+    id: any; 
     name: any;
     price: any;
     category:any;
-    // Add other product properties as needed
+    
   }
   

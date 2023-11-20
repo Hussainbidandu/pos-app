@@ -1,1 +1,9 @@
-<p>user-profile works!</p>
+<h1>user-profile</h1>
+<form>
+<mat-form-field>
+
+    <mat-label>firstname</mat-label>
+    <input matInput type="text" name="firstName" #firstName="ngModel" [(ngModel)]="userProf.firstName">
+
+</mat-form-field>
+</form>

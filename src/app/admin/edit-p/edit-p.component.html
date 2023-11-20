@@ -1,0 +1,56 @@
+<div class="container-fluid">
+    <h2>Edit Product</h2>
+    <hr/>
+    {{ product | json }}
+
+    <form #form="ngForm">
+        <!-- ID Column -->
+        <div class="row">
+            <div class="col-md-2">
+                <mat-form-field>
+                    <mat-label>ID</mat-label>
+                    <input matInput type="text" name="id" #id="ngModel" [(ngModel)]="product.id">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <!-- Name Column -->
+        <div class="row">
+            <!-- Name column -->
+            <div class="col-md-4">
+                <mat-form-field>
+                    <mat-label>Name</mat-label>
+                    <input matInput type="text" name="name" #name="ngModel" [(ngModel)]="product.name">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <!-- price column -->
+            <div class="col-md-4">
+                <mat-form-field>
+                    <mat-label>Price</mat-label>
+                    <input matInput type="number" name="price" #name="ngModel" [(ngModel)]="product.price">
+                </mat-form-field>
+            </div>
+        </div>
+
+
+        <!-- Category Column -->
+        <div class="row">
+            <div class="col-md-4">
+                <mat-form-field>
+                    <mat-label>Category</mat-label>
+                    <input matInput type="text" name="category" #category="ngModel" [(ngModel)]="product.category">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+         <div class="row">
+            <div class="col-md-2">
+                <button mat-raised-button color="accent" (click)="updateProduct(form)" >Submit</button>
+            </div>
+        </div>
+    </form> 
+</div>
+

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { usersProfiles} from 'src/app/models/userProfile';
 
 @Component({
   selector: 'app-user-profile',
@@ -6,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent {
+  userProf:usersProfiles;
 
 }

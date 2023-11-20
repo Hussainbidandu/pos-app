@@ -1,34 +1,242 @@
-
 {
   "products": [
-
     {
       "id": 1,
       "name": "Product 1",
-      "price": 10.99,
-      "category": "Electronics"
+      "price": 20,
+      "category": "Category 1"
     },
     {
       "id": 2,
       "name": "Product 2",
-      "price": 19.99,
-      "category": "Clothing"
+      "price": 300,
+      "category": "Category 2"
     },
     {
       "id": 3,
       "name": "Product 3",
-      "price": 5.49,
-      "category": "Books"
+      "price": 400,
+      "category": "category8"
+    },
+    {
+      "id": 4,
+      "name": "Product 4",
+      "price": 7000,
+      "category": "Category 1"
+    },
+    {
+      "id": 5,
+      "name": "product 5",
+      "price": 800,
+      "category": "category 8"
+    },
+    {
+      "id": 6,
+      "name": "product 6",
+      "price": 600,
+      "category": "Category 2"
     }
   ],
-  
-    "empolyee":[
-     
-    ]
+  "employees": [
+    
+{
+    "id": 1,
+    "name": "A",
+    "role": "admin",
+    "phonenumber": "9576342199",
+    "userId": "Hussain123",
+    "password": "Hussain123"
+  },
+  {
+    "id": 2,
+    "name": "B",
+    "role": "branchmanager",
+    "phonenumber": "6754321890",
+    "userId": "Sonu415",
+    "password": "Sonu415"
+  },
+  {
+    "id": 3,
+    "name": "C",
+    "role": "branchemployee",
+    "phonenumber": "8423543216",
+    "userId": "Ramya123",
+    "password": "Ramya123"
   }
- 
+  ],
+  "addEmployees": [
+    {
+      "id": 1,
+      "firstName": "hussain",
+      "lastName": "hussain",
+      "phoneNumber": "9502170767",
+      "userRole": "admin",
+      "email": "hussain@gmail.com",
+      "password": "hussain@415"
+    },
+    {
+      "id": 2,
+      "firstName": "hussain1",
+      "lastName": "hussain1",
+      "phoneNumber": "9502170768",
+      "userRole": "user",
+      "email": "hussain111@gmail.com",
+      "password": "hussain@111"
+    },
+    {
+      "id": 3,
+      "firstName": "durga",
+      "lastName": "durga",
+      "phoneNumber": "9502170769",
+      "userRole": "admin",
+      "email": "durga@gmail.com",
+      "password": "durga@410"
+    },
+    {
+      "id": 4,
+      "firstName": "kavya",
+      "lastName": "kavya",
+      "phoneNumber": "9502173400",
+      "userRole": "admin",
+      "email": "kavya@gmail.com",
+      "password": "kavya@415"
+    },
+    {
+      "id": "5",
+      "firstName": "ramija",
+      "lastName": "shaik",
+      "phoneNumber": "6123456789",
+      "userRole": "manager",
+      "email": "ramija@gmail.com",
+      "password": "ramya@125"
+    },
+    {
+      "id": "6",
+      "firstName": "rafath",
+      "lastName": "rafath",
+      "phoneNumber": "7587654320",
+      "userRole": "employee",
+      "email": "rafath@gmail.com",
+      "password": "rafath123"
+    },
+    {
+      "id": "7",
+      "firstName": "Hussain",
+      "lastName": "Hussain",
+      "phoneNumber": "9502170700",
+      "userRole": "employee",
+      "email": "hussain@gmail.com",
+      "password": "hussain415"
+    },
+    {
+      "id": "8",
+      "firstName": "sonu",
+      "lastName": "sonu",
+      "phoneNumber": "9703456789",
+      "userRole": "admin",
+      "email": "sonu@gmail.com",
+      "password": "sonu123"
+    },
+    {
+      "id": "9",
+      "firstName": "reshma",
+      "lastName": "reshma",
+      "phoneNumber": "6754321890",
+      "userRole": "user",
+      "email": "reshma@gmail.com",
+      "password": "reshma415"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "firstname": "A",
+      "lastname": "A",
+      "phoneNumber": "9501279078",
+      "role": "branchEmployee"
+    },
+    {
+      "id": 2,
+      "firstname": "B",
+      "lastname": "B",
+      "phoneNumber": "6502170700",
+      "role": "branchEmployee"
+    },
+    {
+      "id": 3,
+      "firstname": "C",
+      "lastname": "C",
+      "phoneNumber": "9502134500",
+      "role": "branchManager"
+    },
+    {
+      "id": 4,
+      "firstname": "D",
+      "lastname": "D",
+      "phoneNumber": "6754321790",
+      "role": "branchEmployee"
+    },
+    {
+      "id": 5,
+      "firstname": "E",
+      "lastname": "E",
+      "phoneNumber": "9502173400",
+      "role": "branchEmployee"
+    },
+    {
+      "id": 6,
+      "firstname": "F",
+      "lastname": "F",
+      "phoneNumber": "6523156788",
+      "role": "branchManager"
+    },
+    {
+      "id": 7,
+      "firstname": "G",
+      "lastname": "G",
+      "phoneNumber": "7396785409",
+      "role": "branchManager"
+    },
+    {
+      "id": 8,
+      "firstname": "H",
+      "lastname": "H",
+      "phoneNumber": "9666215478",
+      "role": "branchEmployee"
+    },
+    {
+      "id": 9,
+      "firstname": "AA",
+      "lastname": "AA",
+      "phoneNumber": "6547890650",
+      "role": "branchEmployee"
+    },
+    {
+      "id": 10,
+      "firstname": "HHH",
+      "lastname": "HHH",
+      "phoneNumber": "7543876545",
+      "role": "branchManager"
+    }
+  ],
+  "contacts":[
+    {
+      "name":"sales",
+      "phoneNumber":"6123456789",
+      "email":"sales@gmail.com"
+    },
+    {
+      
+      "name":"support",
+      "phoneNumber":"8923456700",
+      "email":"support@gmail.com"
+    },
+    {
+      
+      "name":"General Inquiries",
+      "phoneNumber":"9723456700",
+      "email":"generalinquiriesinfo@gmail.com"
+    }
+  ]
 
-
-  
-
-
+}

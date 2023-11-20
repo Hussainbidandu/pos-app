@@ -1,0 +1,86 @@
+<p>userform works!</p>
+<div class="container-fluid">
+    <h2> user form</h2>
+    <hr />
+    {{ user | json }}
+    <form #form="ngForm">
+         <!-- ID Column  -->
+         <div class="row">
+            <div class="col-md-4">
+                <mat-form-field>
+                    <mat-label> ID </mat-label>
+                    <input matInput type="number" name="id" #id="ngModel" [(ngModel)]="user.id" required>
+                </mat-form-field>
+                <span *ngIf="id.errors && (id.touched || id.dirty)" style="color: red;">
+                    <span [hidden]="!id.errors['required']"> Enter Id </span>
+                </span>
+            </div>
+        </div>
+          <!-- Name Columns  -->
+          <div class="row">
+            <!-- Name column -->
+            <div class="col-md-2">
+                <mat-form-field>
+                    <mat-label> first Name </mat-label>
+                    <input matInput  type="text" name="name" #name="ngModel" [(ngModel)]="user.firstname" required>
+                </mat-form-field>
+                <span *ngIf="name.errors && (name.touched || name.dirty)" style="color: red;">
+                    <span [hidden]="!name.errors['required']"> Enter user Name </span>
+                </span>
+            </div>
+               <!-- Name Columns  -->
+          <div class="row">
+            <!-- Name column -->
+            <div class="col-md-2">
+                <mat-form-field>
+                    <mat-label>   last Name </mat-label>
+                    <input matInput  type="text" name="name" #name="ngModel" [(ngModel)]="user.lastname" required>
+                </mat-form-field>
+                <span *ngIf="name.errors && (name.touched || name.dirty)" style="color: red;">
+                    <span [hidden]="!name.errors['required']"> Enter last Name </span>
+                </span>
+            </div>
+              <!-- Phone Number Column  -->
+        <div class="row">
+            <div class="col-md-4">
+                <mat-form-field>
+                    <mat-label> Phone Number </mat-label>
+                    <input matInput  type="text" name="phoneNumber" #phoneNumber="ngModel" 
+                    [(ngModel)]="user.phoneNumber" pattern="^[6-9]{1}[0-9]{9}$" required>
+                </mat-form-field>
+                <span *ngIf="phoneNumber.errors && (phoneNumber.touched || phoneNumber.dirty)" style="color: red;">
+                    <span [hidden]="!phoneNumber.errors['required']"> Enter Phone Number</span>
+                    <span [hidden]="!phoneNumber.errors['pattern']"> Enter Valid Phone Number</span>
+                </span>
+            </div>            
+        </div>
+          <!-- role -->
+          <div class="row">
+            <div class="col-md-4">
+               
+                <mat-form-field>
+                    <mat-label>Role</mat-label>
+                    
+                    <mat-select matInput name="role" #role="ngModel" [(ngModel)]="user.role" required>
+                      <mat-option value="branchManager">Branch Manager</mat-option>
+                      <mat-option value="branchEmployee">Branch Employee</mat-option>
+                    </mat-select>
+                   
+                  </mat-form-field>
+                  <span *ngIf="role.errors && (role.touched || role.dirty)" style="color: red;">
+                    <span [hidden]="!role.errors['required']">Enter role</span>
+                  </span>
+                  
+            </div>            
+        </div>
+
+          <!-- submit -->
+          <div class="row">
+            <div class="col-md-2">
+                <button mat-raised-button color="accent" (click)="onSubmit(form)" [disabled]="form.invalid"> Submit </button>
+        
+            </div>
+        </div>
+</div>
+
+

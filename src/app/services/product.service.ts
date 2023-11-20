@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { products } from '../models/product';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,45 +15,34 @@ export class ProductService {
   //In constructor will create on variable for using Http Client
 
   constructor(private http: HttpClient) { }
-
-    //adding product
-  addproduct(product:products) : Observable<any>{
-    const httpOptions={
-      headers : new HttpHeaders({'content-type':'application/json'})
-    }
-    
-      return this.http.post(this.url+'/products',product,httpOptions)
-    
-
-    
+ //ading products
+ addProduct(product:products){
+  const httpOptions={
+    headers:new HttpHeaders({'content-Type':'application/json'})
   }
-// view products
-  viewProducts(): Observable<any>{
-    return this.http.get(this.url+ '/products', {responseType: 'json'})
-  }
- 
+  return this.http.post(this.url+'/products',product,httpOptions)
+ }
+ //view all products
+ viewProducts():Observable<any>{
+  return this.http.get(this.url+'/products',{responseType:'json'})
+ }
 
-  // Delete product
-  deleteProduct(id : any) : Observable<any> {
-    return this.http.delete(this.url + '/products/' +id, {responseType: 'json'})
-  }
+ //delete products
+ deleteProduct(id:any):Observable<any>{
+  return this.http.delete(this.url+'/products/'+id, {responseType:'json'})
+ }
 
-  // Get product by ID 
+  // Get product by ID for edit componet file
   getProductbyId(id : any ) : Observable<any> {
     return this.http.get(this.url + '/products/' +id, {responseType : 'json'})
   }
 
-  // Update product 
-  updateProduct(product:products) : Observable<any> {
+   // Update product for edit component file
+   updateProduct(product:products) : Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({'Content-Type' : 'application/json'})
     }
     console.log(product);
-    return this.http.put(this.url + '/products/' + product.id,products,httpOptions)
+    return this.http.put(this.url + '/products/' + product.id,product,httpOptions)
   }
- 
-
-
- 
- 
 }

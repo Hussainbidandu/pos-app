@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { EmployeeService } from '../services/employee.service';
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormGroup ,FormControl,Validators,FormBuilder} from '@angular/forms';
 import { Router } from '@angular/router';
+import { EmployeeService } from '../services/employee.service';
 
 
 @Component({
@@ -9,14 +9,18 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
-
-  loginForm: FormGroup;
-  protected formSubmitted : boolean = false;
+export class LoginComponent {
 
 
-  constructor(private employeeService: EmployeeService,
-    private formBuilder: FormBuilder, private router: Router) { }
+   protected formSubmitted:boolean=false;
+  
+   loginForm: FormGroup;
+   constructor(private formBuilder: FormBuilder, private router: Router,private employeeSerVice:EmployeeService) {
+      this.loginForm = this.formBuilder.group({
+        userid: ['', Validators.required],
+        password: ['', Validators.required],
+      });
+    }
 
 
   ngOnInit(): void {
@@ -24,9 +28,59 @@ export class LoginComponent implements OnInit {
       userId: new FormControl(null, [Validators.required]),
       password: new FormControl(null, [Validators.required])
     })
-
-
   }
 
-}
+  loginUser() {
+    const data : any = {
+      userId : this.loginForm.controls['userId'].value,
+      password : this.loginForm.controls['password'].value
+    }
+    // console.log(data)
+    this.employeeSerVice.getEmployeeinfo(data.userId, data.password).subscribe((data) => {
+      // console.log(data)
+      let employee = data[0];
+      console.log(employee)
+      sessionStorage.setItem('role', employee.role)
+      sessionStorage.setItem('name', employee.name)
+      sessionStorage.setItem('isLoggedIn', 'true')
+      if(employee.role === 'admin') {
+        this.router.navigate(['second'])
+      } else if (employee.role === 'branchmanager' || employee.role === 'branchemployee') {
+        this.router.navigate(['first'])
+      }
+    })
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //  protected formSubmitted:boolean=false;
+  
+  // loginForm: FormGroup;
+   // constructor(private formBuilder: FormBuilder, private router: Router) {
+  //   this.loginForm = this.formBuilder.group({
+  //     userid: ['', Validators.required],
+  //     password: ['', Validators.required],
+  //   });
+  // }
+
+  // loginUser() {
+    //   }
+  }
+
+  
+   
 
