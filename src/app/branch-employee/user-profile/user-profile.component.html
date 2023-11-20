@@ -1,9 +1,76 @@
 <h1>user-profile</h1>
-<form>
-<mat-form-field>
-
-    <mat-label>firstname</mat-label>
-    <input matInput type="text" name="firstName" #firstName="ngModel" [(ngModel)]="userProf.firstName">
-
-</mat-form-field>
-</form>
+<div class="container-fluid">
+    <h2>product form</h2>
+    <hr />
+    {{ userProf| json }}
+    <form #form="ngForm">
+                  <!-- Name Columns  -->
+                  <div class="row">
+                    <!-- Name column -->
+                    <div class="col-md-2">
+                        <mat-form-field>
+                            <mat-label> first Name </mat-label>
+                            <input matInput  type="text" name="name" #name="ngModel" [(ngModel)]="userProf.firstname" required>
+                        </mat-form-field>
+                        <span *ngIf="name.errors && (name.touched || name.dirty)" style="color: red;">
+                            <span [hidden]="!name.errors['required']"> Enter user Name </span>
+                        </span>
+                    </div>
+                       <!-- Name Columns  -->
+                  <div class="row">
+                    <!-- Name column -->
+                    <div class="col-md-2">
+                        <mat-form-field>
+                            <mat-label>   last Name </mat-label>
+                            <input matInput  type="text" name="name" #name="ngModel" [(ngModel)]="userProf.lastname" required>
+                        </mat-form-field>
+                        <span *ngIf="name.errors && (name.touched || name.dirty)" style="color: red;">
+                            <span [hidden]="!name.errors['required']"> Enter last Name </span>
+                        </span>
+                    </div>
+                           <!-- Phone Number Column  -->
+        <div class="row">
+            <div class="col-md-4">
+                <mat-form-field>
+                    <mat-label> Phone Number </mat-label>
+                    <input matInput  type="text" name="phoneNumber" #phoneNumber="ngModel" 
+                    [(ngModel)]="userProf.phoneNumber" pattern="^[6-9]{1}[0-9]{9}$" required>
+                </mat-form-field>
+                <span *ngIf="phoneNumber.errors && (phoneNumber.touched || phoneNumber.dirty)" style="color: red;">
+                    <span [hidden]="!phoneNumber.errors['required']"> Enter Phone Number</span>
+                    <span [hidden]="!phoneNumber.errors['pattern']"> Enter Valid Phone Number</span>
+                </span>
+            </div>            
+        </div>
+          <!-- email Column -->
+          <div class="row">
+            <!-- Name column -->
+            <div class="col-md-2">
+                <mat-form-field>
+                    <mat-label>email</mat-label>
+                    <input matInput type="text" name="email" #email="ngModel" [(ngModel)]="userProf.email">
+                </mat-form-field>
+                <span *ngIf="email.errors && (email.touched || email.dirty)" style="color: red;">
+                    <span [hidden]="!email.errors['required']"> Enter City</span>
+                </span>
+            </div>
+        </div>
+        <!-- password Column -->
+        <div class="row">
+            <!-- Name column -->
+            <div class="col-md-2">
+                <mat-form-field>
+                    <mat-label>password</mat-label>
+                    <input matInput type="text" name="password" #password="ngModel" [(ngModel)]="userProf.password">
+                </mat-form-field>
+                <span *ngIf="password.errors && (password.touched || password.dirty)" style="color: red;">
+                    <span [hidden]="!password.errors['required']"> Enter City</span>
+                </span>
+            </div>
+        </div>
+          <!-- Submit  -->
+          <div class="row">
+            <div class="col-md-2">
+                <button mat-raised-button color="accent" (click)="onSubmit(form)" [disabled]="form.invalid"> Submit </button>
+            
+            </div>

@@ -12,5 +12,11 @@ export class UserProfileService {
 
   constructor(private http: HttpClient) { }
 
-  
+   //ading users details
+ addUsers(user:usersProfiles){
+  const httpOptions={
+    headers:new HttpHeaders({'content-Type':'application/json'})
+  }
+  return this.http.post(this.url+'/usersProfiles',user,httpOptions)
+ }
 }

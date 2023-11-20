@@ -34,35 +34,34 @@
       "id": 6,
       "name": "product 6",
       "price": 600,
-      "category": "Category 2"
+      "category": "Category 4"
     }
   ],
   "employees": [
-    
-{
-    "id": 1,
-    "name": "A",
-    "role": "admin",
-    "phonenumber": "9576342199",
-    "userId": "Admin123",
-    "password": "Admin123"
-  },
-  {
-    "id": 2,
-    "name": "B",
-    "role": "branchmanager",
-    "phonenumber": "6754321890",
-    "userId": "Manager124",
-    "password": "Manager124"
-  },
-  {
-    "id": 3,
-    "name": "C",
-    "role": "branchemployee",
-    "phonenumber": "8423543216",
-    "userId": "Employee125",
-    "password": "Employee125"
-  }
+    {
+      "id": 1,
+      "name": "A",
+      "role": "admin",
+      "phonenumber": "9576342199",
+      "userId": "Admin123",
+      "password": "Admin123"
+    },
+    {
+      "id": 2,
+      "name": "B",
+      "role": "branchmanager",
+      "phonenumber": "6754321890",
+      "userId": "Manager124",
+      "password": "Manager124"
+    },
+    {
+      "id": 3,
+      "name": "C",
+      "role": "branchemployee",
+      "phonenumber": "8423543216",
+      "userId": "Employee125",
+      "password": "Employee125"
+    }
   ],
   "addEmployees": [
     {
@@ -195,7 +194,7 @@
       "firstname": "G",
       "lastname": "G",
       "phoneNumber": "7396785409",
-      "role": "branchManager"
+      "role": "branchemployee"
     },
     {
       "id": 8,
@@ -216,27 +215,33 @@
       "firstname": "HHH",
       "lastname": "HHH",
       "phoneNumber": "7543876545",
-      "role": "branchManager"
+      "role": "branchemployee"
     }
   ],
-  "contacts":[
+  "contacts": [
     {
-      "name":"sales",
-      "phoneNumber":"6123456789",
-      "email":"sales@gmail.com"
+      "name": "sales",
+      "phoneNumber": "6123456789",
+      "email": "sales@gmail.com"
     },
     {
-      
-      "name":"support",
-      "phoneNumber":"8923456700",
-      "email":"support@gmail.com"
+      "name": "support",
+      "phoneNumber": "8923456700",
+      "email": "support@gmail.com"
     },
     {
-      
-      "name":"General Inquiries",
-      "phoneNumber":"9723456700",
-      "email":"generalinquiriesinfo@gmail.com"
+      "name": "General Inquiries",
+      "phoneNumber": "9723456700",
+      "email": "generalinquiriesinfo@gmail.com"
+    }
+  ],
+  " usersProfiles": [
+    {
+      "firstName": "sonu",
+      "lastName": "sonu",
+      "phoneNumber": "9703456789",
+      "email": "sonu@gmail.com",
+      "password": "sonu123"
     }
   ]
-
 }

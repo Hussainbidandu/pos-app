@@ -7,17 +7,19 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { loginCheckGuard } from './guards/login-check.guard';
+import { deactivateGuard } from './guards/deactivate.guard';
+
 
 
 
 const routes: Routes = [
-  {path:'home',component:HomeComponent,canActivate:[loginCheckGuard]},
-  {path: 'about-us',component:AboutUsComponent,canActivate:[loginCheckGuard]},
+  {path:'home',component:HomeComponent,canActivate:[loginCheckGuard],canDeactivate:[deactivateGuard]},
+  {path: 'about-us',component:AboutUsComponent},
   {path:'contact-us',component:ContactComponent},
   {path:'login',component:LoginComponent},
 
   {
-    path: 'admin', loadChildren: () => import('../app/admin/admin.module')
+    path: 'admin',  loadChildren: () => import('../app/admin/admin.module')
     .then(m => m.AdminModule)
   },
   {

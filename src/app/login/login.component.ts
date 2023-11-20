@@ -52,33 +52,6 @@ export class LoginComponent {
   }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  //  protected formSubmitted:boolean=false;
-  
-  // loginForm: FormGroup;
-   // constructor(private formBuilder: FormBuilder, private router: Router) {
-  //   this.loginForm = this.formBuilder.group({
-  //     userid: ['', Validators.required],
-  //     password: ['', Validators.required],
-  //   });
-  // }
-
-  // loginUser() {
-    //   }
   }
 
   

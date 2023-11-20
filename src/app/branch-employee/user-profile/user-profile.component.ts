@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+
 import { usersProfiles} from 'src/app/models/userProfile';
+import { UserProfileService } from 'src/app/services/user-profile.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -9,5 +10,23 @@ import { usersProfiles} from 'src/app/models/userProfile';
 })
 export class UserProfileComponent {
   userProf:usersProfiles;
+
+    
+
+
+constructor(private userService:UserProfileService) {
+  this.userProf= new usersProfiles();
+}
+
+onSubmit(form: any): any {
+
+
+  console.log(form)
+    console.log(this.userProf)
+    this.userService.addUsers(this.userProf).subscribe((data) => {
+      console.log(data)
+    })
+
+}
 
 }

@@ -1,6 +1,6 @@
 export class usersProfiles{
-    firstName:any
-    lastName:any;
+    firstname:any
+    lastname:any;
     phoneNumber:any;
     email:any;
     password:any
