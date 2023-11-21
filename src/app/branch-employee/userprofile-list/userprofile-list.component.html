@@ -1,0 +1,32 @@
+<p>userprofile-list works!</p>
+
+<div class="container">
+    <h3> Profile-Table List</h3>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>id</th>&nbsp;&nbsp;&nbsp;&nbsp;
+          <th>Name</th>&nbsp;&nbsp;&nbsp;&nbsp;
+          <th>Phonenumber</th>&nbsp;&nbsp;&nbsp;&nbsp;
+          <th>email</th>&nbsp;&nbsp;&nbsp;&nbsp;
+          <th>Actions</th>&nbsp;&nbsp;&nbsp;&nbsp;
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let userProf of  usersProfiles">
+            <td>{{userProf.id}}</td>&nbsp;&nbsp;&nbsp;&nbsp;
+            <td>{{userProf.firstname}} {{userProf.lastname}}</td>&nbsp;&nbsp;&nbsp;&nbsp;
+            <td>{{userProf.phoneNumber}}</td>&nbsp;&nbsp;&nbsp;&nbsp;
+            <td>{{userProf.email}}</td>&nbsp;&nbsp;&nbsp;&nbsp;
+            <td>{{userProf.password}}</td>
+            <td>
+                <button mat-button color="primary" >Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+
+            </td>
+
+        </tr>
+      </tbody>
+      </table>
+      </div>
+      <!-- <button mat-button color="primary" (click)=" editUser(userProf.id)">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp; -->

@@ -57,6 +57,13 @@ export class AppComponent {
   navigateBranchEmployee() {
     this.router.navigate(['branch-employee/user-profile'])
   }
+
+  navigateUserlist() {
+    this.router.navigate(['branch-employee/userlist'])
+  }
+  navigateOrders() {
+    this.router.navigate(['branch-employee/orders'])
+  }
  login(){
   this.router.navigate(['login'])
  }

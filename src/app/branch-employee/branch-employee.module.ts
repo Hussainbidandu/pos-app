@@ -20,16 +20,22 @@ import {HttpClientModule} from '@angular/common/http';
 
 
 import { RouterModule, Routes } from '@angular/router';
+import { UserprofileListComponent } from './userprofile-list/userprofile-list.component';
+import { CreateOrdersComponent } from './create-orders/create-orders.component';
  const myRouting :Routes= [
   
-  {path:'user-profile',component:UserProfileComponent}
+  {path:'user-profile',component:UserProfileComponent},
+  {path:'userlist',component:UserprofileListComponent},
+  {path:'orders',component:CreateOrdersComponent}
  ]
 
 
 
 @NgModule({
   declarations: [
-    UserProfileComponent
+    UserProfileComponent,
+    UserprofileListComponent,
+    CreateOrdersComponent
   ],
   imports: [
     CommonModule,

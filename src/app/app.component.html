@@ -28,15 +28,14 @@
 
 
     <button mat-stroked-button  *ngIf="isBE" (click)="navigateBranchEmployee()">user-profile</button>&nbsp;&nbsp;
+    <button mat-stroked-button  *ngIf="isBE" (click)="navigateUserlist()">user-profile list</button>&nbsp;&nbsp;
+    <button mat-stroked-button  *ngIf="isBE" (click)="navigateOrders()">orders form</button>&nbsp;&nbsp;
 
 
     <button mat-stroked-button *ngIf="!isLogin" (click)="login()">Login</button>&nbsp;&nbsp;
 
 
     <button mat-stroked-button *ngIf="isLogin" (click)="logout()">Logout</button> &nbsp;&nbsp;
-
-
-
 
 </mat-toolbar>
 

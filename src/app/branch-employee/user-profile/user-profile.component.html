@@ -1,9 +1,21 @@
 <h1>user-profile</h1>
 <div class="container-fluid">
-    <h2>product form</h2>
+    <h2>user profile form</h2>
     <hr />
     {{ userProf| json }}
     <form #form="ngForm">
+          <!-- id -->
+          <div class="row">
+            <div calss="col-md-2">
+                <mat-form-field>
+                    <mat-label>ID</mat-label>
+                    <input matInput type="text" name="id" #id="ngModel" [(ngModel)]="userProf.id" required>
+                </mat-form-field>
+                <span *ngIf="id.errors && (id.touched || id.dirty)" style="color: red;">
+                    <span [hidden]="!id.errors['required']"> Enter Id </span>
+                </span>
+            </div>
+        </div>
                   <!-- Name Columns  -->
                   <div class="row">
                     <!-- Name column -->

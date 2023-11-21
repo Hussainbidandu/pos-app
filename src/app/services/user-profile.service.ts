@@ -13,10 +13,15 @@ export class UserProfileService {
   constructor(private http: HttpClient) { }
 
    //ading users details
- addUsers(user:usersProfiles){
+ addUsers(userProf:usersProfiles){
   const httpOptions={
     headers:new HttpHeaders({'content-Type':'application/json'})
   }
-  return this.http.post(this.url+'/usersProfiles',user,httpOptions)
+  return this.http.post(this.url+'/usersProfiles',userProf,httpOptions)
  }
+
+  //view all users
+  viewUserList():Observable<any>{
+    return this.http.get(this.url+'/usersProfiles',{responseType:'json'})
+   }
 }
